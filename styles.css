@@ -1,0 +1,360 @@
+/* Importar fuente de Google Fonts para un aspecto moderno */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary-color: #007bff; /* Azul vibrante */
+    --secondary-color: #28a745; /* Verde para éxito/confirmación */
+    --text-color: #333;
+    --light-text-color: #666;
+    --bg-color: #f8f9fa; /* Fondo claro */
+    --card-bg-color: #fff;
+    --border-color: #dee2e6;
+    --star-color: #FFD700; /* Oro para las estrellas */
+    --star-outline-color: #ccc;
+    --error-color: #dc3545; /* Rojo para errores */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinea al inicio para contenido largo */
+    min-height: 100vh;
+}
+
+.container {
+    background-color: var(--card-bg-color);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+h1 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--light-text-color);
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.section {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 30px;
+    background-color: #fcfcfc;
+}
+
+legend {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: 0 10px;
+    margin-bottom: 20px;
+    display: table; /* Para que el fondo del legend no ocupe todo el ancho */
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+input[type="text"],
+textarea,
+select {
+    width: calc(100% - 22px); /* Ajuste para padding y borde */
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    color: var(--text-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.comment-box {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: var(--light-text-color);
+}
+
+/* Estilos para el sistema de estrellas */
+.star-rating {
+    font-size: 1.8em; /* Tamaño de las estrellas */
+    color: var(--star-outline-color);
+    cursor: pointer;
+    display: flex; /* Para alinear las estrellas */
+    gap: 5px; /* Espacio entre estrellas */
+}
+
+.star-rating i {
+    transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.star-rating i:hover {
+    transform: scale(1.1);
+}
+
+.star-rating .fas { /* Estrellas seleccionadas/rellenas */
+    color: var(--star-color);
+}
+
+.rating-group {
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 15px;
+}
+
+.rating-group:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.rating-group label {
+    font-weight: normal;
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: var(--light-text-color);
+}
+
+/* Estilos para checkboxes y radios */
+.checkbox-group, .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-group label, .radio-group label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+    color: var(--text-color);
+    margin-bottom: 0; /* Anula el margin-bottom del form-group */
+}
+
+.checkbox-group input[type="checkbox"],
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+    appearance: none; /* Elimina estilos predeterminados del navegador */
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px; /* Para checkboxes */
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0; /* Evita que el checkbox se encoja */
+}
+
+.radio-group input[type="radio"] {
+    border-radius: 50%; /* Para radios */
+}
+
+.checkbox-group input[type="checkbox"]:checked,
+.radio-group input[type="radio"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.checkbox-group input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Tick mark */
+    display: block;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.radio-group input[type="radio"]:checked::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.inline-input {
+    display: inline-block;
+    width: auto;
+    margin-left: 5px;
+    padding: 8px;
+    font-size: 0.9em;
+}
+
+.other-option {
+    margin-top: 5px;
+}
+
+/* Botón de envío */
+.submit-button {
+    display: block;
+    width: 100%;
+    padding: 15px 25px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 30px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+}
+
+/* Mensaje de agradecimiento */
+.thank-you-message {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #e9f7ef; /* Un verde suave para éxito */
+    border: 1px solid var(--secondary-color);
+    border-radius: 12px;
+    margin-top: 30px;
+    color: var(--secondary-color);
+}
+
+.thank-you-message h2 {
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 1.8em;
+}
+
+.thank-you-message p {
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+.back-home-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.back-home-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Mensajes de error */
+.error-message {
+    color: var(--error-color);
+    font-size: 0.9em;
+    margin-top: 5px;
+    display: block;
+}
+
+input.invalid,
+textarea.invalid,
+select.invalid {
+    border-color: var(--error-color);
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px 25px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    legend {
+        font-size: 1.2em;
+    }
+
+    .star-rating {
+        font-size: 1.5em;
+    }
+
+    .submit-button {
+        font-size: 1.1em;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    .container {
+        padding: 15px;
+        margin: 10px 0;
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    .subtitle {
+        font-size: 0.9em;
+    }
+    legend {
+        font-size: 1.1em;
+    }
+    .star-rating {
+        font-size: 1.3em;
+    }
+    input[type="text"],
+    textarea,
+    select {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    .submit-button {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}   

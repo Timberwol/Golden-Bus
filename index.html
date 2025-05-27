@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta de Satisfacción - Asesor Financiero Web</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Encuesta de Satisfacción y Experiencia del Usuario</h1>
+        <p class="subtitle">¡Gracias por tomarte el tiempo de compartir tu experiencia con nosotros! Tu opinión es fundamental para mejorar nuestros servicios y seguir ofreciendo una asesoría financiera de alta calidad.</p>
+
+        <form id="satisfactionForm">
+            <fieldset class="section">
+                <legend>Sección 1: Sobre el Asesor Financiero</legend>
+
+                <div class="form-group">
+                    <label for="overallSatisfaction">1. ¿Qué tan satisfecho(a) estás con la asesoría recibida por parte de nuestro asesor financiero?</label>
+                    <div class="star-rating" data-question="overallSatisfaction">
+                        <i class="far fa-star" data-value="1"></i>
+                        <i class="far fa-star" data-value="2"></i>
+                        <i class="far fa-star" data-value="3"></i>
+                        <i class="far fa-star" data-value="4"></i>
+                        <i class="far fa-star" data-value="5"></i>
+                    </div>
+                    <input type="hidden" name="overallSatisfaction" id="overallSatisfaction" required>
+                    <textarea class="comment-box" placeholder="Si lo deseas, puedes dejar un comentario adicional aquí..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Por favor, califica los siguientes aspectos del asesor financiero (1 estrella = Deficiente, 5 estrellas = Excelente):</label>
+
+                    <div class="rating-group">
+                        <label>Conocimiento y Experiencia:</label>
+                        <div class="star-rating" data-question="knowledge">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                        <input type="hidden" name="knowledge" required>
+                    </div>
+
+                    <div class="rating-group">
+                        <label>Claridad en la Comunicación:</label>
+                        <div class="star-rating" data-question="communication">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                        <input type="hidden" name="communication" required>
+                    </div>
+
+                    <div class="rating-group">
+                        <label>Atención y Empatía:</label>
+                        <div class="star-rating" data-question="empathy">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                        <input type="hidden" name="empathy" required>
+                    </div>
+
+                    <div class="rating-group">
+                        <label>Resolución de Dudas:</label>
+                        <div class="star-rating" data-question="doubtResolution">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                        <input type="hidden" name="doubtResolution" required>
+                    </div>
+
+                    <div class="rating-group">
+                        <label>Recomendaciones Personalizadas:</label>
+                        <div class="star-rating" data-question="recommendations">
+                            <i class="far fa-star" data-value="1"></i>
+                            <i class="far fa-star" data-value="2"></i>
+                            <i class="far fa-star" data-value="3"></i>
+                            <i class="far fa-star" data-value="4"></i>
+                            <i class="far fa-star" data-value="5"></i>
+                        </div>
+                        <input type="hidden" name="recommendations" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mostLiked">3. ¿Qué fue lo que más te gustó de la interacción con el asesor financiero?</label>
+                    <textarea id="mostLiked" name="mostLiked" rows="4" minlength="50" placeholder="Anímate a compartir tus comentarios positivos..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="advisorImprovement">4. ¿Hay algo en lo que nuestro asesor financiero podría mejorar para futuras interacciones?</label>
+                    <textarea id="advisorImprovement" name="advisorImprovement" rows="4" placeholder="(Opcional)"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset class="section">
+                <legend>Sección 2: Experiencia con la Plataforma Web</legend>
+
+                <div class="form-group">
+                    <label for="budgetManagerUtility">5. ¿Qué tan útil te resultó el **Gestor de Presupuesto** en nuestra plataforma?</label>
+                    <div class="star-rating" data-question="budgetManagerUtility">
+                        <i class="far fa-star" data-value="1"></i>
+                        <i class="far fa-star" data-value="2"></i>
+                        <i class="far fa-star" data-value="3"></i>
+                        <i class="far fa-star" data-value="4"></i>
+                        <i class="far fa-star" data-value="5"></i>
+                    </div>
+                    <input type="hidden" name="budgetManagerUtility" required>
+                    <textarea class="comment-box" placeholder="Si lo deseas, puedes dejar un comentario adicional aquí..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>6. ¿Qué características del **Gestor de Presupuesto** valoras más? (Puedes seleccionar varias opciones)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="budgetFeatures" value="Facilidad de uso"> Facilidad de uso</label>
+                        <label><input type="checkbox" name="budgetFeatures" value="Visualización clara de gastos e ingresos"> Visualización clara de gastos e ingresos</label>
+                        <label><input type="checkbox" name="budgetFeatures" value="Categorización automática de transacciones"> Categorización automática de transacciones</label>
+                        <label><input type="checkbox" name="budgetFeatures" value="Alertas y notificaciones"> Alertas y notificaciones</label>
+                        <label><input type="checkbox" name="budgetFeatures" value="Personalización de categorías"> Personalización de categorías</label>
+                        <label><input type="checkbox" name="budgetFeatures" value="Generación de informes"> Generación de informes</label>
+                        <label class="other-option"><input type="checkbox" name="budgetFeatures" value="Otra"> Otra (especifica): <input type="text" name="budgetFeatures_other" class="inline-input"></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="loanSimulatorUtility">7. ¿Qué tan útil te resultó el **Simulador de Préstamos** en nuestra plataforma?</label>
+                    <div class="star-rating" data-question="loanSimulatorUtility">
+                        <i class="far fa-star" data-value="1"></i>
+                        <i class="far fa-star" data-value="2"></i>
+                        <i class="far fa-star" data-value="3"></i>
+                        <i class="far fa-star" data-value="4"></i>
+                        <i class="far fa-star" data-value="5"></i>
+                    </div>
+                    <input type="hidden" name="loanSimulatorUtility" required>
+                    <textarea class="comment-box" placeholder="Si lo deseas, puedes dejar un comentario adicional aquí..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>8. ¿Qué características del **Simulador de Préstamos** te parecieron más valiosas? (Puedes seleccionar varias opciones)</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="loanFeatures" value="Cálculo preciso de cuotas"> Cálculo preciso de cuotas</label>
+                        <label><input type="checkbox" name="loanFeatures" value="Comparación de diferentes escenarios"> Comparación de diferentes escenarios</label>
+                        <label><input type="checkbox" name="loanFeatures" value="Interfaz intuitiva"> Interfaz intuitiva</label>
+                        <label><input type="checkbox" name="loanFeatures" value="Gráficos y visualizaciones"> Gráficos y visualizaciones</label>
+                        <label><input type="checkbox" name="loanFeatures" value="Opciones de personalización"> Opciones de personalización (plazo, tasa)</label>
+                        <label class="other-option"><input type="checkbox" name="loanFeatures" value="Otra"> Otra (especifica): <input type="text" name="loanFeatures_other" class="inline-input"></label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="platformEaseOfUse">9. En general, ¿cómo calificarías la facilidad de uso de nuestra plataforma web?</label>
+                    <div class="star-rating" data-question="platformEaseOfUse">
+                        <i class="far fa-star" data-value="1"></i>
+                        <i class="far fa-star" data-value="2"></i>
+                        <i class="far fa-star" data-value="3"></i>
+                        <i class="far fa-star" data-value="4"></i>
+                        <i class="far fa-star" data-value="5"></i>
+                    </div>
+                    <input type="hidden" name="platformEaseOfUse" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="platformImprovements">10. ¿Qué otras funcionalidades o mejoras te gustaría ver en nuestra plataforma web?</label>
+                    <textarea id="platformImprovements" name="platformImprovements" rows="4" placeholder="(Opcional)"></textarea>
+                </div>
+            </fieldset>
+
+            <fieldset class="section">
+                <legend>Sección 3: Información General (Opcional)</legend>
+
+                <div class="form-group">
+                    <label for="ageRange">11. ¿Cuál es tu rango de edad?</label>
+                    <select id="ageRange" name="ageRange">
+                        <option value="">Selecciona...</option>
+                        <option value="Menos de 25 años">Menos de 25 años</option>
+                        <option value="25 - 34 años">25 - 34 años</option>
+                        <option value="35 - 44 años">35 - 44 años</option>
+                        <option value="45 - 54 años">45 - 54 años</option>
+                        <option value="55 años o más">55 años o más</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="frequencyOfUse">12. ¿Con qué frecuencia utilizas nuestros servicios de asesoría financiera o nuestra plataforma web?</label>
+                    <select id="frequencyOfUse" name="frequencyOfUse">
+                        <option value="">Selecciona...</option>
+                        <option value="Semanalmente">Semanalmente</option>
+                        <option value="Mensualmente">Mensualmente</option>
+                        <option value="Trimestralmente">Trimestralmente</option>
+                        <option value="Anualmente">Anualmente</option>
+                        <option value="Primera vez">Primera vez</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="submit-button">Enviar Encuesta</button>
+        </form>
+
+        <div id="thankYouMessage" class="thank-you-message" style="display:none;">
+            <h2>¡Muchas gracias por completar nuestra encuesta!</h2>
+            <p>Tu retroalimentación es muy valiosa para nosotros y nos ayuda a seguir mejorando nuestros servicios.</p>
+            <p>Puedes <a href="#" class="back-home-link">volver a la página principal</a> o explorar otros recursos.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
